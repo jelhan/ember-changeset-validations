@@ -7,6 +7,9 @@
     "changeset",
     "validations"
   ],
+  "homepage": "https://github.com/poteto/ember-changeset-validations",
+  "bugs": "https://github.com/poteto/ember-changeset-validations/issues",
+  "repository": "https://github.com/poteto/ember-changeset-validations",
   "license": "MIT",
   "author": "Lauren Tan <arr@sugarpirate.com>",
   "contributors": [
@@ -19,19 +22,16 @@
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "https://github.com/poteto/ember-changeset-validations",
-  "bugs": "https://github.com/poteto/ember-changeset-validations/issues",
-  "homepage": "https://github.com/poteto/ember-changeset-validations",
   "scripts": {
     "build": "ember build",
+    "contributors": "npx contributor-faces -e \"(*-bot|*\\[bot\\]|*-tomster|homu|bors)\"",
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix",
+    "node-test": "mocha node-test --recursive",
+    "nodetest": "mocha node-tests --recursive",
     "start": "ember serve",
     "test": "ember test",
-    "node-test": "mocha node-test --recursive",
-    "test:all": "ember try:each",
-    "nodetest": "mocha node-tests --recursive",
-    "contributors": "npx contributor-faces -e \"(*-bot|*\\[bot\\]|*-tomster|homu|bors)\""
+    "test:all": "ember try:each"
   },
   "dependencies": {
     "ember-auto-import": "^2.4.0",
@@ -76,21 +76,23 @@
     "prettier": "^2.4.1",
     "qunit": "^2.17.2",
     "qunit-dom": "^2.0.0",
+    "release-plan": "^0.9.0",
     "webpack": "^5.60.0"
   },
   "engines": {
     "node": "12.* || 14.* || >= 16"
+  },
+  "volta": {
+    "node": "16.20.2",
+    "npm": "6.14.18"
+  },
+  "ember": {
+    "edition": "octane"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config",
     "after": [
       "ember-changeset"
     ]
-  },
-  "ember": {
-    "edition": "octane"
-  },
-  "volta": {
-    "node": "14.17.3"
   }
 }
