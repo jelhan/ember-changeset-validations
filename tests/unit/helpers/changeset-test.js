@@ -39,7 +39,7 @@ module('Unit | Helper | changeset', function () {
     ]);
     assert.ok(
       changesetInstance.get('isInvalid'),
-      'should be invalid with wrong length first name'
+      'should be invalid with wrong length first name',
     );
 
     changesetInstance.set('firstName', '');
@@ -49,24 +49,24 @@ module('Unit | Helper | changeset', function () {
     ]);
     assert.ok(
       changesetInstance.get('isInvalid'),
-      'should be invalid with blank first name'
+      'should be invalid with blank first name',
     );
 
     changesetInstance.set('lastName', '');
     assert.deepEqual(
       changesetInstance.get('error').lastName.validation,
-      "[CUSTOM] Last name can't be blank"
+      "[CUSTOM] Last name can't be blank",
     );
     assert.ok(
       changesetInstance.get('isInvalid'),
-      'should be invalid with blank last name'
+      'should be invalid with blank last name',
     );
 
     changesetInstance.set('firstName', 'Jim');
     changesetInstance.set('lastName', 'Bob');
     assert.ok(
       changesetInstance.get('isValid'),
-      'should be valid after setting valid first and last names'
+      'should be valid after setting valid first and last names',
     );
   });
 
@@ -91,7 +91,7 @@ module('Unit | Helper | changeset', function () {
     assert.deepEqual(
       JSON.parse(JSON.stringify(changesetInstance.get('error').email)),
       expectedError,
-      'email should error'
+      'email should error',
     );
 
     changesetInstance.set('username', 'jimbob');
@@ -99,7 +99,7 @@ module('Unit | Helper | changeset', function () {
     assert.deepEqual(
       changesetInstance.get('change').username,
       'jimbob',
-      'should set username'
+      'should set username',
     );
 
     changesetInstance.set('username', 'foo@bar.com');
@@ -108,7 +108,7 @@ module('Unit | Helper | changeset', function () {
     assert.deepEqual(
       JSON.parse(JSON.stringify(changesetInstance.get('error').username)),
       expectedError,
-      'username should error'
+      'username should error',
     );
   });
 
@@ -127,13 +127,13 @@ module('Unit | Helper | changeset', function () {
     changesetInstance.set('firstName', 'Herp');
     assert.ok(
       changesetInstance.get('isValid'),
-      'should be valid if content is passed into validator'
+      'should be valid if content is passed into validator',
     );
 
     changesetInstance.set('lastName', 'McDerpface');
     assert.ok(
       changesetInstance.get('isValid'),
-      'should be valid if content is passed into validator'
+      'should be valid if content is passed into validator',
     );
   });
 
@@ -152,18 +152,18 @@ module('Unit | Helper | changeset', function () {
     changesetInstance.validate().then(() => {
       assert.deepEqual(
         changesetInstance.get('error').firstName.validation,
-        "[CUSTOM] First name can't be blank"
+        "[CUSTOM] First name can't be blank",
       );
       assert.ok(
         changesetInstance.get('isInvalid'),
-        'should be invalid with wrong length first name'
+        'should be invalid with wrong length first name',
       );
 
       changesetInstance.set('firstName', 'Jim');
       changesetInstance.set('lastName', 'Bob');
       assert.ok(
         changesetInstance.get('isValid'),
-        'should be valid after setting valid first and last names'
+        'should be valid after setting valid first and last names',
       );
     });
   });
@@ -183,7 +183,7 @@ module('Unit | Helper | changeset', function () {
     });
     assert.ok(
       changesetInstance.get('_options').skipValidate,
-      'option should have been passed through'
+      'option should have been passed through',
     );
 
     changesetInstance.set('firstName', '');

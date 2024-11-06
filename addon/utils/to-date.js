@@ -23,9 +23,8 @@ export default function toDate(argument) {
       (typeof argument === 'string' || argStr === '[object String]') &&
       typeof console !== 'undefined'
     ) {
-      // eslint-disable-next-line no-console
       console.warn('Please use `Date.parse` to parse strings.');
-      // eslint-disable-next-line no-console
+
       console.warn(new Error().stack);
     }
     return new Date(NaN);

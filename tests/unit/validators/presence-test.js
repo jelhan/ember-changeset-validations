@@ -9,15 +9,15 @@ module('Unit | Validator | presence', function () {
 
     assert.strictEqual(
       validator(key, undefined),
-      buildMessage(key, { type: 'present' })
+      buildMessage(key, { type: 'present' }),
     );
     assert.strictEqual(
       validator(key, null),
-      buildMessage(key, { type: 'present' })
+      buildMessage(key, { type: 'present' }),
     );
     assert.strictEqual(
       validator(key, ''),
-      buildMessage(key, { type: 'present' })
+      buildMessage(key, { type: 'present' }),
     );
     assert.true(validator(key, 'a'));
   });
@@ -31,7 +31,7 @@ module('Unit | Validator | presence', function () {
     assert.true(validator(key, ''));
     assert.strictEqual(
       validator(key, 'a'),
-      buildMessage(key, { type: 'blank' })
+      buildMessage(key, { type: 'blank' }),
     );
   });
 
@@ -41,15 +41,15 @@ module('Unit | Validator | presence', function () {
 
     assert.strictEqual(
       validator(key, undefined),
-      buildMessage(key, { type: 'present' })
+      buildMessage(key, { type: 'present' }),
     );
     assert.strictEqual(
       validator(key, null),
-      buildMessage(key, { type: 'present' })
+      buildMessage(key, { type: 'present' }),
     );
     assert.strictEqual(
       validator(key, ''),
-      buildMessage(key, { type: 'present' })
+      buildMessage(key, { type: 'present' }),
     );
     assert.true(validator(key, 'a'));
   });
@@ -63,7 +63,7 @@ module('Unit | Validator | presence', function () {
     assert.true(validator(key, ''));
     assert.strictEqual(
       validator(key, 'a'),
-      buildMessage(key, { type: 'blank' })
+      buildMessage(key, { type: 'blank' }),
     );
   });
 
@@ -94,21 +94,21 @@ module('Unit | Validator | presence', function () {
 
       assert.equal(
         validator(key, '', '', { [target]: 'a' }, {}),
-        expectedIfEmpty
+        expectedIfEmpty,
       );
       assert.equal(
         validator(key, 'a', '', { [target]: 'a' }, {}),
-        expectedIfPresent
+        expectedIfPresent,
       );
 
       // if the target is blank on the changes, it ignores the value in the content
       assert.equal(
         validator(key, '', '', { [target]: '' }, { [target]: 'a' }),
-        true
+        true,
       );
       assert.equal(
         validator(key, 'a', '', { [target]: '' }, { [target]: 'a' }),
-        true
+        true,
       );
     }
 
@@ -168,7 +168,7 @@ module('Unit | Validator | presence', function () {
     assert.strictEqual(
       validator(key, ''),
       'First name should be present',
-      'custom message string is generated correctly'
+      'custom message string is generated correctly',
     );
   });
 
@@ -192,7 +192,7 @@ module('Unit | Validator | presence', function () {
     assert.strictEqual(
       validator(key, 'test'),
       'some test message',
-      'custom message function is returned correctly'
+      'custom message function is returned correctly',
     );
   });
 });

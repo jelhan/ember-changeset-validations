@@ -20,7 +20,7 @@ module('Unit | Utility | get messages', function () {
     assert.deepEqual(
       getMessages(dummyModuleMap, false),
       defaultMessages,
-      'loads the correct module'
+      'loads the correct module',
     );
   });
 });

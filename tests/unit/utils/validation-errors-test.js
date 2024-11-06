@@ -16,16 +16,16 @@ module('Unit | Utility | validation errors', function () {
   test('#formatMessage formats a blank message', function (assert) {
     assert.strictEqual(
       messages.formatMessage('{foo} is {bar}', { foo: 'foo', bar: 'bar' }),
-      'foo is bar'
+      'foo is bar',
     );
   });
 
   test('#buildMessage builds a validation message', function (assert) {
     assert.notStrictEqual(
       buildMessage('firstName', { type: 'invalid' }).indexOf(
-        'First name is invalid'
+        'First name is invalid',
       ),
-      -1
+      -1,
     );
   });
 
@@ -40,7 +40,7 @@ module('Unit | Utility | validation errors', function () {
         },
       }),
       "First name can't be equal to foo",
-      'Built message is generated correctly'
+      'Built message is generated correctly',
     );
   });
 
@@ -49,12 +49,12 @@ module('Unit | Utility | validation errors', function () {
     assert.strictEqual(
       buildMessage('firstName', { type: 'present' }),
       "First name can't be blank",
-      '"present" message is correct'
+      '"present" message is correct',
     );
     assert.strictEqual(
       buildMessage('firstName', { type: 'blank' }),
       'First name must be blank',
-      '"blank" message is correct'
+      '"blank" message is correct',
     );
   });
 
@@ -77,7 +77,7 @@ module('Unit | Utility | validation errors', function () {
         context: { message, foo: 'foo' },
       }),
       'some test message',
-      'correct custom error message is returned'
+      'correct custom error message is returned',
     );
   });
 
@@ -92,7 +92,7 @@ module('Unit | Utility | validation errors', function () {
     assert.notStrictEqual(
       typeof result,
       'string',
-      'the return value is an object'
+      'the return value is an object',
     );
     let {
       message,
@@ -119,7 +119,7 @@ module('Unit | Utility | validation errors', function () {
     assert.notStrictEqual(
       typeof result,
       'string',
-      'the return value is an object'
+      'the return value is an object',
     );
     let {
       message,

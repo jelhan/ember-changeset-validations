@@ -13,7 +13,7 @@ module('Integration | Component | address-book', function (hooks) {
       return Promise.resolve();
     };
     await render(
-      hbs`<AddressBook @onSave={{this.onSave}} @model={{this.model}} />`
+      hbs`<AddressBook @onSave={{this.onSave}} @model={{this.model}} />`,
     );
 
     await fillIn('#address-book-name', 'abcdef');

@@ -34,7 +34,7 @@ export default function buildMessage(key, result) {
       let builtMessage = message(key, type, value, context);
       assert(
         'Custom message function must return a string',
-        typeof builtMessage === 'string'
+        typeof builtMessage === 'string',
       );
 
       return builtMessage;
@@ -42,12 +42,12 @@ export default function buildMessage(key, result) {
 
     return messages.formatMessage(
       message,
-      Object.assign({ description }, context)
+      Object.assign({ description }, context),
     );
   }
 
   return messages.formatMessage(
     message,
-    Object.assign({ description }, context)
+    Object.assign({ description }, context),
   );
 }
