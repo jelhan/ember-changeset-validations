@@ -96,6 +96,6 @@
     ]
   },
   "peerDependencies": {
-    "@ember/string": "^4.0.0"
+    "@ember/string": "^3.0.0 || ^4.0.0"
   }
 }
