@@ -10,7 +10,7 @@ module('Unit | Validator | inclusion', function () {
 
     assert.strictEqual(
       validator(key, ''),
-      buildMessage(key, { type: 'inclusion', value: '', context: options })
+      buildMessage(key, { type: 'inclusion', value: '', context: options }),
     );
     assert.strictEqual(
       validator(key, 'Executive'),
@@ -18,7 +18,7 @@ module('Unit | Validator | inclusion', function () {
         type: 'inclusion',
         value: 'Executive',
         context: options,
-      })
+      }),
     );
     assert.true(validator(key, 'Manager'));
   });
@@ -30,11 +30,11 @@ module('Unit | Validator | inclusion', function () {
 
     assert.strictEqual(
       validator(key, ''),
-      buildMessage(key, { type: 'inclusion', value: '', context: options })
+      buildMessage(key, { type: 'inclusion', value: '', context: options }),
     );
     assert.strictEqual(
       validator(key, 61),
-      buildMessage(key, { type: 'inclusion', value: 61, context: options })
+      buildMessage(key, { type: 'inclusion', value: 61, context: options }),
     );
     assert.true(validator(key, 21));
   });
@@ -50,7 +50,7 @@ module('Unit | Validator | inclusion', function () {
     assert.strictEqual(
       validator(key, 92),
       'Your Age is invalid, should be within 18,60',
-      'custom message string is generated correctly'
+      'custom message string is generated correctly',
     );
   });
 
@@ -73,7 +73,7 @@ module('Unit | Validator | inclusion', function () {
     assert.strictEqual(
       validator(key, 'Test'),
       'some test message',
-      'custom message function is returned correctly'
+      'custom message function is returned correctly',
     );
   });
 

@@ -22,7 +22,7 @@ export default class AddressBookForm extends Component {
     this.formChangeset = new Changeset(
       this.args.model,
       lookupValidator(validations),
-      validations
+      validations,
     );
   }
 

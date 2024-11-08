@@ -27,7 +27,7 @@ module('Unit | Validator | format', function () {
     assert.true(validator(key, 'http://lauren.com'));
     assert.strictEqual(
       validator(key, 'somevalue'),
-      buildMessage(key, { type: options.type })
+      buildMessage(key, { type: options.type }),
     );
   });
 
@@ -39,7 +39,7 @@ module('Unit | Validator | format', function () {
     assert.true(validator(key, 'secretword'));
     assert.strictEqual(
       validator(key, 'fail'),
-      buildMessage(key, { type: 'invalid' })
+      buildMessage(key, { type: 'invalid' }),
     );
   });
 
@@ -51,7 +51,7 @@ module('Unit | Validator | format', function () {
     assert.strictEqual(
       validator(key, 'test@example.com'),
       buildMessage(key, { type: 'email' }),
-      'email fails format test'
+      'email fails format test',
     );
     assert.true(validator(key, 'notanemail'), 'non-email passes format test');
   });
@@ -64,11 +64,11 @@ module('Unit | Validator | format', function () {
     assert.strictEqual(
       validator(key, 'customregex'),
       buildMessage(key, { type: 'invalid' }),
-      'matching regex fails format test'
+      'matching regex fails format test',
     );
     assert.true(
       validator(key, 'notmatching'),
-      'non-matching regex passes format test'
+      'non-matching regex passes format test',
     );
   });
 
@@ -83,7 +83,7 @@ module('Unit | Validator | format', function () {
     assert.strictEqual(
       validator(key, 'notaurl'),
       'Url should be of type url',
-      'custom message string is generated correctly'
+      'custom message string is generated correctly',
     );
   });
 
@@ -107,7 +107,7 @@ module('Unit | Validator | format', function () {
     assert.strictEqual(
       validator(key, 'notaurl'),
       'some test message',
-      'custom message function is returned correctly'
+      'custom message function is returned correctly',
     );
   });
 });

@@ -11,15 +11,15 @@ module('Unit | Validator | confirmation', function () {
 
     assert.strictEqual(
       validator(key, undefined, undefined, changes),
-      buildMessage(key, { type: 'confirmation', context: opts })
+      buildMessage(key, { type: 'confirmation', context: opts }),
     );
     assert.strictEqual(
       validator(key, null, undefined, changes),
-      buildMessage(key, { type: 'confirmation', context: opts })
+      buildMessage(key, { type: 'confirmation', context: opts }),
     );
     assert.strictEqual(
       validator(key, '', undefined, changes),
-      buildMessage(key, { type: 'confirmation', context: opts })
+      buildMessage(key, { type: 'confirmation', context: opts }),
     );
     assert.true(validator(key, '1234567', undefined, changes));
   });
@@ -36,7 +36,7 @@ module('Unit | Validator | confirmation', function () {
     assert.strictEqual(
       validator(key, undefined, undefined, changes),
       'Password confirmation is not equal to password',
-      'custom message string is generated correctly'
+      'custom message string is generated correctly',
     );
   });
 
@@ -61,7 +61,7 @@ module('Unit | Validator | confirmation', function () {
     assert.strictEqual(
       validator(key, 'testValue', undefined, changes),
       'some test message',
-      'custom message function is returned correctly'
+      'custom message function is returned correctly',
     );
   });
 
@@ -85,7 +85,7 @@ test('It looks for default values as well as "changes" values', function (assert
 
   assert.strictEqual(
     validator(key, 'foo', undefined, {}, content),
-    buildMessage(key, { type: 'confirmation', context: opts })
+    buildMessage(key, { type: 'confirmation', context: opts }),
   );
   assert.true(validator(key, password, undefined, {}, content));
 });

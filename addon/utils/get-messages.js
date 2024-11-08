@@ -22,7 +22,7 @@ let cachedRef = null;
  */
 export default function getMessages(
   moduleMap = requirejs.entries,
-  useCache = true
+  useCache = true,
 ) {
   let messagesModule = defaultMessages;
 
@@ -36,7 +36,7 @@ export default function getMessages(
     // Merge the user specified messages with the defaults
     messagesModule = withDefaults(
       requireModule(moduleKey).default,
-      messagesModule
+      messagesModule,
     );
   }
 
