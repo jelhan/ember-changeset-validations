@@ -70,7 +70,7 @@ module.exports = async function () {
         npm: {
           devDependencies: {
             'ember-load-initializers': '^2.0.0',
-            'ember-source': '~4.12.0'
+            'ember-source': '~4.12.0',
           },
         },
       },
