@@ -10,7 +10,7 @@ module('Unit | Validator | length', function () {
 
     assert.strictEqual(
       validator(key, ''),
-      buildMessage(key, { type: 'tooShort', value: '', context: options })
+      buildMessage(key, { type: 'tooShort', value: '', context: options }),
     );
     assert.true(validator(key, 'a'));
   });
@@ -24,7 +24,7 @@ module('Unit | Validator | length', function () {
     assert.true(validator(key, 'a'));
     assert.strictEqual(
       validator(key, 'ab'),
-      buildMessage(key, { type: 'tooLong', value: 'ab', context: options })
+      buildMessage(key, { type: 'tooLong', value: 'ab', context: options }),
     );
   });
 
@@ -35,14 +35,14 @@ module('Unit | Validator | length', function () {
 
     assert.strictEqual(
       validator(key, ''),
-      buildMessage(key, { type: 'between', value: '', context: options })
+      buildMessage(key, { type: 'between', value: '', context: options }),
     );
     assert.true(validator(key, 'a'));
     assert.true(validator(key, 'ab'));
     assert.true(validator(key, 'abc'));
     assert.strictEqual(
       validator(key, 'abcd'),
-      buildMessage(key, { type: 'between', value: '', context: options })
+      buildMessage(key, { type: 'between', value: '', context: options }),
     );
   });
 
@@ -53,12 +53,12 @@ module('Unit | Validator | length', function () {
 
     assert.strictEqual(
       validator(key, 'a'),
-      buildMessage(key, { type: 'wrongLength', value: '', context: options })
+      buildMessage(key, { type: 'wrongLength', value: '', context: options }),
     );
     assert.true(validator(key, 'ab'));
     assert.strictEqual(
       validator(key, 'abc'),
-      buildMessage(key, { type: 'wrongLength', value: '', context: options })
+      buildMessage(key, { type: 'wrongLength', value: '', context: options }),
     );
   });
 
@@ -81,7 +81,7 @@ module('Unit | Validator | length', function () {
     assert.strictEqual(
       validator(key, 'abc'),
       'First name should be length 2',
-      'custom messsage string is generated correctly'
+      'custom messsage string is generated correctly',
     );
   });
 
@@ -105,7 +105,7 @@ module('Unit | Validator | length', function () {
     assert.strictEqual(
       validator(key, 'abc'),
       'some test message',
-      'custom message function is returned correctly'
+      'custom message function is returned correctly',
     );
   });
 });

@@ -20,12 +20,12 @@ module('Unit | Validator | number', function () {
         value: 'not a number',
         context: options,
       }),
-      'non-numeric string is not allowed'
+      'non-numeric string is not allowed',
     );
     assert.strictEqual(
       validator(key, NaN),
       buildMessage(key, { type: 'notANumber', value: NaN, context: options }),
-      'NaN is not allowed'
+      'NaN is not allowed',
     );
   });
 
@@ -40,7 +40,7 @@ module('Unit | Validator | number', function () {
         type: 'notANumber',
         value: 'not a number',
         context: options,
-      })
+      }),
     );
     assert.true(validator(key, '7'));
     assert.true(validator(key, 7));
@@ -53,7 +53,7 @@ module('Unit | Validator | number', function () {
 
     assert.strictEqual(
       validator(key, ''),
-      buildMessage(key, { type: 'notANumber' })
+      buildMessage(key, { type: 'notANumber' }),
     );
     assert.true(validator(key, '7'));
   });
@@ -65,11 +65,11 @@ module('Unit | Validator | number', function () {
 
     assert.strictEqual(
       validator(key, null),
-      buildMessage(key, { type: 'notANumber' })
+      buildMessage(key, { type: 'notANumber' }),
     );
     assert.strictEqual(
       validator(key, undefined),
-      buildMessage(key, { type: 'notANumber' })
+      buildMessage(key, { type: 'notANumber' }),
     );
   });
 
@@ -84,7 +84,7 @@ module('Unit | Validator | number', function () {
         type: 'notAnInteger',
         value: '8.5',
         context: options,
-      })
+      }),
     );
     assert.true(validator(key, '7'));
   });
@@ -96,7 +96,7 @@ module('Unit | Validator | number', function () {
 
     assert.strictEqual(
       validator(key, '8.5'),
-      buildMessage(key, { type: 'equalTo', value: '8.5', context: options })
+      buildMessage(key, { type: 'equalTo', value: '8.5', context: options }),
     );
     assert.true(validator(key, '12'));
   });
@@ -108,11 +108,11 @@ module('Unit | Validator | number', function () {
 
     assert.strictEqual(
       validator(key, '15'),
-      buildMessage(key, { type: 'lessThan', value: '15', context: options })
+      buildMessage(key, { type: 'lessThan', value: '15', context: options }),
     );
     assert.strictEqual(
       validator(key, '12'),
-      buildMessage(key, { type: 'lessThan', value: '12', context: options })
+      buildMessage(key, { type: 'lessThan', value: '12', context: options }),
     );
     assert.true(validator(key, '4'));
   });
@@ -128,7 +128,7 @@ module('Unit | Validator | number', function () {
         type: 'lessThanOrEqualTo',
         value: '15',
         context: options,
-      })
+      }),
     );
     assert.true(validator(key, '12'));
     assert.true(validator(key, '4'));
@@ -142,11 +142,11 @@ module('Unit | Validator | number', function () {
     assert.true(validator(key, '15'));
     assert.strictEqual(
       validator(key, '12'),
-      buildMessage(key, { type: 'greaterThan', value: '12', context: options })
+      buildMessage(key, { type: 'greaterThan', value: '12', context: options }),
     );
     assert.strictEqual(
       validator(key, '4'),
-      buildMessage(key, { type: 'greaterThan', value: '4', context: options })
+      buildMessage(key, { type: 'greaterThan', value: '4', context: options }),
     );
   });
 
@@ -163,7 +163,7 @@ module('Unit | Validator | number', function () {
         type: 'greaterThanOrEqualTo',
         value: '4',
         context: options,
-      })
+      }),
     );
   });
 
@@ -175,7 +175,7 @@ module('Unit | Validator | number', function () {
     assert.true(validator(key, '15'));
     assert.strictEqual(
       validator(key, '-12'),
-      buildMessage(key, { type: 'positive', value: '-12', context: options })
+      buildMessage(key, { type: 'positive', value: '-12', context: options }),
     );
   });
 
@@ -187,7 +187,7 @@ module('Unit | Validator | number', function () {
     assert.true(validator(key, '15'));
     assert.strictEqual(
       validator(key, '34'),
-      buildMessage(key, { type: 'odd', value: '34', context: options })
+      buildMessage(key, { type: 'odd', value: '34', context: options }),
     );
   });
 
@@ -198,7 +198,7 @@ module('Unit | Validator | number', function () {
 
     assert.strictEqual(
       validator(key, '15'),
-      buildMessage(key, { type: 'even', value: '15', context: options })
+      buildMessage(key, { type: 'even', value: '15', context: options }),
     );
     assert.true(validator(key, '34'));
   });
@@ -210,7 +210,7 @@ module('Unit | Validator | number', function () {
 
     assert.strictEqual(
       validator(key, '15'),
-      buildMessage(key, { type: 'multipleOf', value: '15', context: options })
+      buildMessage(key, { type: 'multipleOf', value: '15', context: options }),
     );
     assert.true(validator(key, '34'));
   });
@@ -223,7 +223,7 @@ module('Unit | Validator | number', function () {
     assert.strictEqual(
       validator(key, 33),
       'Even Age is wrong',
-      'custom message string is generated correctly'
+      'custom message string is generated correctly',
     );
   });
 
@@ -247,7 +247,7 @@ module('Unit | Validator | number', function () {
     assert.strictEqual(
       validator(key, 33),
       'some test message',
-      'custom message function is returned correctly'
+      'custom message function is returned correctly',
     );
   });
 });

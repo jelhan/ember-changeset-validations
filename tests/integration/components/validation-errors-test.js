@@ -50,7 +50,7 @@ module('Integration | Components | validation errors', function (hooks) {
     assert.strictEqual(
       find('ul.lastNameErrors li').textContent.trim(),
       '[CUSTOM] Last name is too short (minimum is 2 characters)',
-      'has last name errors'
+      'has last name errors',
     );
     assert.notOk(find('ul.ageErrors'), 'has no age errors');
 
@@ -58,11 +58,11 @@ module('Integration | Components | validation errors', function (hooks) {
 
     assert.ok(
       find('ul.firstNameErrors li'),
-      'has first name errors after last name input'
+      'has first name errors after last name input',
     );
     assert.notOk(
       find('ul.lastNameErrors'),
-      'has no last name errors after input'
+      'has no last name errors after input',
     );
     assert.notOk(find('ul.ageErrors'), 'has no age errors');
 
@@ -70,11 +70,11 @@ module('Integration | Components | validation errors', function (hooks) {
 
     assert.ok(
       find('ul.firstNameErrors li'),
-      'has first name errors after last name input'
+      'has first name errors after last name input',
     );
     assert.notOk(
       find('ul.lastNameErrors'),
-      'has no last name errors after input'
+      'has no last name errors after input',
     );
     assert.notOk(find('ul.ageErrors'), 'has no age errors after input');
 
@@ -82,11 +82,11 @@ module('Integration | Components | validation errors', function (hooks) {
 
     assert.ok(
       find('ul.firstNameErrors li'),
-      'has first name errors after last name input'
+      'has first name errors after last name input',
     );
     assert.notOk(
       find('ul.lastNameErrors'),
-      'has no last name errors after input'
+      'has no last name errors after input',
     );
     assert.ok(find('ul.ageErrors'), 'has age errors after input');
   });
@@ -133,7 +133,7 @@ module('Integration | Components | validation errors', function (hooks) {
     assert.strictEqual(
       find('ul.stateWiErrors li').textContent.trim(),
       '[CUSTOM] State wi is too short (minimum is 2 characters)',
-      'has last name errors'
+      'has last name errors',
     );
 
     await fillIn('input.state-wi', 'bc');
@@ -142,7 +142,7 @@ module('Integration | Components | validation errors', function (hooks) {
     assert.strictEqual(
       find('ul.stateNyErrors li').textContent.trim(),
       '[CUSTOM] State ny is too short (minimum is 2 characters)',
-      'has last name errors'
+      'has last name errors',
     );
     assert.notOk(find('ul.stateWiErrors'), 'has no wi errors after input');
   });

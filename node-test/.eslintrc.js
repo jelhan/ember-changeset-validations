@@ -5,7 +5,7 @@ module.exports = {
     mocha: true,
   },
   rules: {
-    'node/no-unpublished-require': [
+    'n/no-unpublished-require': [
       'error',
       {
         // ESLint complaints but it's just devDependencies and used only in tests.

@@ -13,7 +13,7 @@ import { isPromise } from 'validated-changeset';
  */
 function handleValidations(validations = []) {
   let rejectedValidations = emberArray(validations).reject(
-    (validation) => typeOf(validation) === 'boolean' && validation
+    (validation) => typeOf(validation) === 'boolean' && validation,
   );
 
   return rejectedValidations.length === 0 || rejectedValidations;
@@ -34,12 +34,12 @@ function handleValidations(validations = []) {
  */
 export default function handleMultipleValidations(
   validators,
-  { key, newValue, oldValue, changes, content }
+  { key, newValue, oldValue, changes, content },
 ) {
   let validations = emberArray(
     validators.map((validator) =>
-      validator(key, newValue, oldValue, changes, content)
-    )
+      validator(key, newValue, oldValue, changes, content),
+    ),
   );
 
   if (emberArray(validations).any(isPromise)) {

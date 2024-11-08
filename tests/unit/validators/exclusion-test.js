@@ -16,7 +16,7 @@ module('Unit | Validator | exclusion', function () {
         type: 'exclusion',
         value: 'Manager',
         context: options,
-      })
+      }),
     );
   });
 
@@ -29,7 +29,7 @@ module('Unit | Validator | exclusion', function () {
     assert.true(validator(key, 61));
     assert.strictEqual(
       validator(key, 21),
-      buildMessage(key, { type: 'exclusion', value: 21, context: options })
+      buildMessage(key, { type: 'exclusion', value: 21, context: options }),
     );
   });
 
@@ -44,7 +44,7 @@ module('Unit | Validator | exclusion', function () {
     assert.strictEqual(
       validator(key, 20),
       'Your Age is invalid, should not be within 18,60',
-      'custom message string generated correctly'
+      'custom message string generated correctly',
     );
   });
 
@@ -67,7 +67,7 @@ module('Unit | Validator | exclusion', function () {
     assert.strictEqual(
       validator(key, 'Test'),
       'some test message',
-      'custom message function is returned correctly'
+      'custom message function is returned correctly',
     );
   });
 
