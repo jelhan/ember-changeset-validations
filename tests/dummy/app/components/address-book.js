@@ -32,6 +32,11 @@ export default class AddressBookForm extends Component {
   }
 
   @action
+  onChange(fieldName, evt) {
+    this.formChangeset.set(fieldName, evt.target.value);
+  }
+
+  @action
   async onSubmit(event) {
     event.preventDefault();
 
