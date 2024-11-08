@@ -5,11 +5,12 @@
         Название
       </label>
 
-      <Input
+      <input
         id="address-book-name"
         class="form-control form-control_small {{if (get this.formChangeset.error.name 'validation') 'is-invalid' ''}}"
-        @type="text"
-        @value={{this.formChangeset.name}}
+        type="text"
+        value={{this.formChangeset.name}}
+        {{on "change" (fn this.onChange "name")}}
         {{on "focusout" (fn this.onBlur "name")}}
       />
 

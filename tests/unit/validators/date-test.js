@@ -19,17 +19,17 @@ module('Unit | Validator | date', function () {
         value: 'not a date',
         context: options,
       }),
-      'result: [CUSTOM] Birth date must be a valid date'
+      'result: [CUSTOM] Birth date must be a valid date',
     );
     assert.strictEqual(
       validator(key, NaN),
       buildMessage(key, { type: 'date', value: NaN, context: options }),
-      'result: NaN is not allowed'
+      'result: NaN is not allowed',
     );
     assert.strictEqual(
       validator(key, {}),
       buildMessage(key, { type: 'date', value: {}, context: options }),
-      'result: empty object is not allowed'
+      'result: empty object is not allowed',
     );
   });
 
@@ -49,7 +49,7 @@ module('Unit | Validator | date', function () {
     validator = validateDate(options);
     assert.true(
       validator(key, Date.parse(startDate)),
-      'accepts milliseconds with both args'
+      'accepts milliseconds with both args',
     );
   });
 
@@ -66,7 +66,7 @@ module('Unit | Validator | date', function () {
         value: 'pity a fool',
         context: options,
       }),
-      'result: [CUSTOM] Test date must be a valid date'
+      'result: [CUSTOM] Test date must be a valid date',
     );
   });
 
@@ -83,7 +83,7 @@ module('Unit | Validator | date', function () {
         value: 'not a date',
         context: options,
       }),
-      'result: [CUSTOM] Test date must be a valid date'
+      'result: [CUSTOM] Test date must be a valid date',
     );
     assert.strictEqual(
       validator(key, null),
@@ -92,7 +92,7 @@ module('Unit | Validator | date', function () {
         value: 'not a date',
         context: options,
       }),
-      'result: [CUSTOM] Test date must be a valid date'
+      'result: [CUSTOM] Test date must be a valid date',
     );
     assert.strictEqual(
       validator(key, undefined),
@@ -101,7 +101,7 @@ module('Unit | Validator | date', function () {
         value: 'not a date',
         context: options,
       }),
-      'result: [CUSTOM] Test date must be a valid date'
+      'result: [CUSTOM] Test date must be a valid date',
     );
     assert.strictEqual(
       validator(key, '1992-03-30'),
@@ -110,7 +110,7 @@ module('Unit | Validator | date', function () {
         value: 'not a date',
         context: options,
       }),
-      'result: [CUSTOM] Test date must be a valid date'
+      'result: [CUSTOM] Test date must be a valid date',
     );
     assert.strictEqual(
       validator(key, 'not a date'),
@@ -119,17 +119,17 @@ module('Unit | Validator | date', function () {
         value: 'not a date',
         context: options,
       }),
-      'non-date string is not allowed'
+      'non-date string is not allowed',
     );
     assert.strictEqual(
       validator(key, NaN),
       buildMessage(key, { type: 'date', value: NaN, context: options }),
-      'NaN is not allowed'
+      'NaN is not allowed',
     );
     assert.strictEqual(
       validator(key, {}),
       buildMessage(key, { type: 'date', value: {}, context: options }),
-      'empty object is not allowed'
+      'empty object is not allowed',
     );
   });
 
@@ -150,7 +150,7 @@ module('Unit | Validator | date', function () {
         afterDate,
         message: `[BEFORE] date is NOT before ${afterDate}`,
       }),
-      'date is after "before" date'
+      'date is after "before" date',
     );
 
     options = { before: () => startDate };
@@ -161,7 +161,7 @@ module('Unit | Validator | date', function () {
         afterDate,
         message: `[BEFORE] date is NOT before ${afterDate}`,
       }),
-      'before accepts a function that returns a date'
+      'before accepts a function that returns a date',
     );
 
     options = { before: afterDate };
@@ -186,7 +186,7 @@ module('Unit | Validator | date', function () {
         afterDate,
         message: `[ON OR BEFORE] date is NOT on or before ${afterDate}`,
       }),
-      'date is after "onOrBefore" date'
+      'date is after "onOrBefore" date',
     );
 
     options = { onOrBefore: () => startDate };
@@ -197,7 +197,7 @@ module('Unit | Validator | date', function () {
         afterDate,
         message: `[ON OR BEFORE] date is NOT on or before ${afterDate}`,
       }),
-      'onOrBefore accepts a function that returns a date'
+      'onOrBefore accepts a function that returns a date',
     );
 
     options = { onOrBefore: afterDate };
@@ -222,7 +222,7 @@ module('Unit | Validator | date', function () {
         startDate,
         message: `[AFTER] date is NOT after ${startDate}`,
       }),
-      'date is after the "after" date'
+      'date is after the "after" date',
     );
 
     options = { after: () => afterDate };
@@ -233,7 +233,7 @@ module('Unit | Validator | date', function () {
         startDate,
         message: `[AFTER] date is NOT after ${startDate}`,
       }),
-      'after accepts a function that returns a date'
+      'after accepts a function that returns a date',
     );
 
     options = { after: startDate };
@@ -258,7 +258,7 @@ module('Unit | Validator | date', function () {
         onOrAfterDate,
         message: `[ON OR AFTER] date is NOT on or after ${startDate}`,
       }),
-      'date onOrAfter the "onOrAfter" date is not allowed'
+      'date onOrAfter the "onOrAfter" date is not allowed',
     );
 
     options = { onOrAfter: () => onOrAfterDate };
@@ -269,7 +269,7 @@ module('Unit | Validator | date', function () {
         onOrAfterDate,
         message: `[ON OR AFTER] date is NOT on or after ${startDate}`,
       }),
-      'onOrAfter accepts a function that returns a date'
+      'onOrAfter accepts a function that returns a date',
     );
 
     options = { onOrAfter: startDate };
@@ -294,7 +294,7 @@ module('Unit | Validator | date', function () {
       assert.strictEqual(
         validator(key, startDate),
         buildMessage(key, { message: 'custom message: before' }),
-        'date on or after the "before" date is not allowed'
+        'date on or after the "before" date is not allowed',
       );
     });
 
@@ -314,7 +314,7 @@ module('Unit | Validator | date', function () {
       assert.strictEqual(
         validator(key, startDate),
         buildMessage(key, { message: 'custom message: onOrBefore' }),
-        'date after the "onOrBefore" date is not allowed'
+        'date after the "onOrBefore" date is not allowed',
       );
     });
 
@@ -331,7 +331,7 @@ module('Unit | Validator | date', function () {
       assert.strictEqual(
         validator(key, startDate),
         buildMessage(key, { message: 'custom message: after' }),
-        'date on or before the "after" date is not allowed'
+        'date on or before the "after" date is not allowed',
       );
     });
 
@@ -351,7 +351,7 @@ module('Unit | Validator | date', function () {
       assert.strictEqual(
         validator(key, startDate),
         buildMessage(key, { message: 'custom message: onOrAfter' }),
-        'date before the "onOrAfter" date is not allowed'
+        'date before the "onOrAfter" date is not allowed',
       );
     });
   });

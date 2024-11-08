@@ -16,15 +16,15 @@ describe('Acceptance: ember generate and destroy validator', function () {
     return emberNew().then(() =>
       emberGenerateDestroy(args, (file) => {
         expect(file('app/validators/is-positive.js')).to.contain(
-          'export default function validateIsPositive(/* options = {} */) {\n'
+          'export default function validateIsPositive(/* options = {} */) {\n',
         );
         expect(file('tests/unit/validators/is-positive-test.js'))
           .to.contain(
-            "import validateIsPositive from 'my-app/validators/is-positive';"
+            "import validateIsPositive from 'my-app/validators/is-positive';",
           )
           .to.contain("module('Unit | Validator | is-positive');")
           .to.contain('assert.ok(validateIsPositive());');
-      })
+      }),
     );
   });
 });

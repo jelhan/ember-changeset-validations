@@ -22,13 +22,18 @@ export default class AddressBookForm extends Component {
     this.formChangeset = new Changeset(
       this.args.model,
       lookupValidator(validations),
-      validations
+      validations,
     );
   }
 
   @action
   onBlur(fieldName) {
     this.formChangeset.validate(fieldName);
+  }
+
+  @action
+  onChange(fieldName, evt) {
+    this.formChangeset.set(fieldName, evt.target.value);
   }
 
   @action
