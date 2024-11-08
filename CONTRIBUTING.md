@@ -46,14 +46,24 @@ issue's number to the description of your pull-request.
 
 ## Installation
 
-First clone this repository:
+- `git clone https://github.com/adopted-ember-addons/ember-changeset-validations.git`
+- `cd ember-changeset-validations`
+- `npm install`
 
-```sh
-git clone https://github.com/poteto/ember-changeset-validations.git
-```
+## Linting
 
-<!-- Add further details on how to install the project here -->
+- `npm run lint`
+- `npm run lint:fix`
 
 ## Running tests
 
-<!-- Tell the user how to run the tests of your project -->
+- `npm run test` – Runs the test suite on the current Ember version
+- `npm run test:ember -- --server` – Runs the test suite in "watch mode"
+- `npm run test:ember-compatibility` – Runs the test suite against multiple Ember versions
+
+## Running the dummy application
+
+- `npm run start`
+- Visit the dummy application at [http://localhost:4200](http://localhost:4200).
+
+For more information on using ember-cli, visit [https://cli.emberjs.com/release/](https://cli.emberjs.com/release/).
